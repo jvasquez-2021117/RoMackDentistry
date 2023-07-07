@@ -1,0 +1,28 @@
+.fondoAnchorPane {
+	-fx-background-color : #f3e7e6;
+	-fx-background-radius : 0 0 0 0;
+}
+
+.miniPane {
+	-fx-background-color : #ffffff;
+	-fx-background-radius : 0 0 0 0;
+}
+
+.paneVertical {
+	-fx-background-color : #123a6f;
+	-fx-background-radius : 0 0 0 0;
+}
+
+.button1 {
+    -fx-background-color: #123a6f;
+}
+
+.button1:hover{
+    -fx-background-color: #0576F4;
+    -fx-background-radius: 0 25% 25% 0;
+}
+
+.fondoTitulo {
+    -fx-background-color: #f3e7e6;
+    -fx-background-radius: 0 0 50% 50%;
+}

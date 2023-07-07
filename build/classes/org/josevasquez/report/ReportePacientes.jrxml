@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePacientes" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="bd437295-a0e0-4202-92ca-262927cac85b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="722e978e-c0b6-44ea-bb89-daf6317c37ac"/>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarPacientes]]>
+	</queryString>
+	<field name="codigoPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosPacientes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaPrimeraVisita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-21" y="-21" width="613" height="773" uuid="fd9599d1-e194-4dd8-a9eb-d92303466b3d"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="23" width="125" height="32" uuid="1f6cc153-a097-43e2-8d8e-32a783896d59"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Pacientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="111" height="20" uuid="d801b978-0cf8-4979-a3da-37d12ab785be"/>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="2" width="107" height="20" uuid="d46c21c4-b4fc-4da7-bbe2-afe1b29f0cc3"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="2" width="47" height="20" uuid="21c23e3f-e314-4dec-871a-02c645c3036e"/>
+				<text><![CDATA[sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="2" width="99" height="20" uuid="899ef4a1-bc0f-4505-b2f9-e3fcdec8a40c"/>
+				<text><![CDATA[fechaNacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="2" width="85" height="20" uuid="31b6499d-8f78-4818-bbfc-2c18671b3937"/>
+				<text><![CDATA[Direccipn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="2" width="66" height="20" uuid="1cee6f08-ab37-433d-b307-42277bbdd29c"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="2" width="100" height="20" uuid="a099bc14-e8c8-4bb5-bb5c-e51cb68bc2b2"/>
+				<text><![CDATA[Primera Visita]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="572" height="1" uuid="ac5e8b63-9e31-4387-b18f-2321d2b446e0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="bffc1dcb-06cf-4d2d-aa99-904ad8289271"/>
+				<textFieldExpression><![CDATA[$F{nombrePaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="107" height="20" uuid="e424a2b3-a3ed-4108-a47d-fac3199a9e72"/>
+				<textFieldExpression><![CDATA[$F{apellidosPacientes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="0" width="47" height="20" uuid="fe890da1-e6b4-42c5-9a3d-e9e80093d855"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="99" height="20" uuid="69248664-e5c8-464a-b4ca-9146636a0329"/>
+				<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="0" width="85" height="20" uuid="32a913a1-c466-448a-b517-8e47da09680c"/>
+				<textFieldExpression><![CDATA[$F{direccionPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="0" width="66" height="20" uuid="0dfeb046-e89e-4413-97fe-5dfbf53944c3"/>
+				<textFieldExpression><![CDATA[$F{telefonoPersonal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="0" width="100" height="20" uuid="b6d28be3-4345-45ef-bc3a-584cf11da21e"/>
+				<textFieldExpression><![CDATA[$F{fechaPrimeraVisita}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="24" width="572" height="1" uuid="42841cad-a165-47fe-aa91-2c8bec0aa9a6"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

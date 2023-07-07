@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetalleRece" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="5d799946-dafa-48eb-b950-695ca178a448">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from DetalleReceta;]]>
+	</queryString>
+	<field name="codigoDetalleReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoMedicamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-22" y="-21" width="615" height="773" uuid="9a38cb27-3a00-4ada-a4ae-5d4f0f3b7f77"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="22" width="189" height="40" uuid="4d2b8fe6-4ca8-4707-a9f6-25958e08dfb8"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Detalle De Recetas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="2" width="76" height="20" uuid="67c8f3c6-2630-47ac-b417-c5b13fa1cb38"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="2" width="216" height="20" uuid="a4ade305-8f98-41a5-a1c9-bba7bfce561d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="2" width="76" height="20" uuid="76e4352d-b640-4b91-b619-70c112fc3687"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cod. Receta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="2" width="100" height="20" uuid="b86eb1cb-5d4e-4c2b-a971-d3aeb747dac2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cod. Medicamento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="48" y="22" width="468" height="1" uuid="8cf5a83b-d326-47f3-8e18-fef2b228658e"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="48" y="0" width="76" height="20" uuid="603f5a9f-4561-4f64-adac-c6327baea80b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoDetalleReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="216" height="20" uuid="2773fa55-c5c1-467a-b1e6-3ac6c763f472"/>
+				<textFieldExpression><![CDATA[$F{dosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="76" height="20" uuid="acae3904-93a1-4e0c-bdd8-58943f34720f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="87913b84-c92a-4e75-bca2-20b0a37060b7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoMedicamento}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="48" y="20" width="468" height="1" uuid="58b1032d-888a-4179-8f2f-97bbfadf636a"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

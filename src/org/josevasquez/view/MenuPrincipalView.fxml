@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="600.0" styleClass="fondoPane" stylesheets="@../resource/MenuPrincipal.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josevasquez.controller.MenuPrincipalController">
+   <children>
+      <Pane layoutX="-47.0" prefHeight="311.0" prefWidth="230.0" styleClass="paneVertical" stylesheets="@../resource/Plantilla.css">
+         <children>
+            <Pane layoutX="83.0" layoutY="191.0" prefHeight="120.0" prefWidth="147.0" rotate="180.0" styleClass="tringualo2" stylesheets="@../resource/MenuPrincipal.css" />
+            <Pane layoutX="-23.0" layoutY="156.0" prefHeight="120.0" prefWidth="147.0" rotate="-50.2" styleClass="tringualo3" stylesheets="@../resource/MenuPrincipal.css" />
+         </children>
+      </Pane>
+      <Pane layoutX="22.0" layoutY="48.0" prefHeight="140.0" prefWidth="183.0" rotate="90.0" styleClass="tringualo4" stylesheets="@../resource/MenuPrincipal.css" />
+      <Pane prefHeight="120.0" prefWidth="147.0" styleClass="tringualo" stylesheets="@../resource/MenuPrincipal.css" />
+      <ImageView fitHeight="166.0" fitWidth="374.0" layoutX="200.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Logo.png" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="27.0" prefWidth="183.0" styleClass="MenuBar" stylesheets="@../resource/MenuPrincipal.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Modulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaPacientes" text="Pacientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEspecialidades" text="Especialidades" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaMedicamentos" text="Medicamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDoctores" text="Doctores" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaRecetas" text="Recetas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDetalleReceta" text="Detalle Recetas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCitas" text="Citas" />
+                  <MenuItem mnemonicParsing="false" onAction="#salir" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="Datos Programador" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaLogin" text="Cerrar Sesión" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

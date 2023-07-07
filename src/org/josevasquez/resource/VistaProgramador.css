@@ -1,0 +1,13 @@
+.pane{
+    -fx-background-color :  #123a6f   ;
+    -fx-background-radius : 0 0 0 0;
+   
+}
+
+.anchorPane{
+    -fx-background-color :  #f3e7e6  ;
+    -fx-background-radius : 0 0 0 0;
+   
+}
+
+

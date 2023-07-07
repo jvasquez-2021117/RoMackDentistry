@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEspecialidades" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="fb86efc0-33b8-4507-bd5d-fcf0d1539cf6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Especialidades;]]>
+	</queryString>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-19" y="-21" width="611" height="773" uuid="6dc144eb-ed5e-4459-8152-f9db119527b0"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="19" width="143" height="40" uuid="947b11a5-c25a-4e1e-81ca-5c54d0b5905f"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Especialidades]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="126" y="2" width="100" height="20" uuid="4b9c4863-433c-4493-8a39-0ef0ddb356f9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="2" width="169" height="20" uuid="84aadfc3-c098-4dfc-ad17-7101ddd5bf89"/>
+				<text><![CDATA[Especialidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="126" y="22" width="350" height="1" uuid="989d6f7a-137b-4887-b07b-b1d62c507711"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="126" y="0" width="100" height="20" uuid="d0a09fcd-4c39-4aa7-9217-52f969766242"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="169" height="20" uuid="06b209e7-7b56-4c46-953a-f2b06056eefc"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="126" y="20" width="350" height="1" uuid="6f94eba7-df59-486a-ab31-65090ebe9411"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

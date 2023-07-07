@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteReceta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0b810a07-6079-466f-9037-101f544d287a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Recetas R inner join Doctores D on R.numeroColegiado = D.numeroColegiado;]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-20" y="-20" width="613" height="772" uuid="aea6658d-7169-49b1-a19c-1b59f151d46d"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="237" y="24" width="87" height="29" uuid="4bc74439-8016-4d43-846a-8a9d3e68bbdc"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Recetas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="2" width="74" height="20" uuid="17a882d9-bc92-470c-adbb-217e109fe398"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="2" width="115" height="20" uuid="f8eb386c-8be1-4fdf-a884-0a8f7dd7c538"/>
+				<text><![CDATA[fechaReceta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="2" width="140" height="20" uuid="e55e4cfb-6368-40ce-9075-357d16e447da"/>
+				<text><![CDATA[Nombres Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="2" width="143" height="20" uuid="a5fa195a-c114-4b14-ab7c-0ea7877aeb95"/>
+				<text><![CDATA[Apellidos Doctor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="48" y="22" width="472" height="1" uuid="de4b9073-c7ed-4a01-a186-6107e7d560cd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="48" y="0" width="74" height="20" uuid="96260b63-514d-45e1-8b15-86f2e3508437"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="1" width="115" height="20" uuid="92fcf973-98e3-4590-ab8f-6e6e11556f32"/>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="1" width="140" height="20" uuid="5c03e334-eb90-4ce1-9b37-27fdad3c5404"/>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="1" width="143" height="20" uuid="f381caf7-18ab-44f5-ab31-2a4719f5f33d"/>
+				<textFieldExpression><![CDATA[$F{apellidosDoctor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="48" y="21" width="472" height="1" uuid="78ae489b-8033-47ab-a532-c62ae7f6fefa"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

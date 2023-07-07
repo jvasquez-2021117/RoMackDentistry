@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Receta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e2a1fef9-8b7a-4d1e-9928-cf960217143d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\vqzjo\\OneDrive\\Documentos\\NetBeansProjects\\RoMackDentistry\\src\\org\\josevasquez\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Recetas where codigoReceta = $P{codReceta}]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-22" y="-21" width="615" height="773" uuid="b5c2b846-eda0-4d9c-9775-f3b8acc3b152"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="248" y="27" width="118" height="33" uuid="3fdd22f2-29c0-4c46-8a84-1e91a7529a44"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Receta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="148" y="7" width="100" height="20" uuid="4355caf1-087e-4dc1-8416-4e26d0b0e690"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="48" y="7" width="100" height="20" uuid="776c3036-e220-4020-9d32-4ea51a4ad1b3"/>
+				<text><![CDATA[Receta No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="7" width="100" height="20" uuid="d2a1be40-5002-4d60-bfc3-a1f4e1dd3433"/>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="319" y="7" width="100" height="20" uuid="33d02f53-822d-40dc-add4-7b0ad9062944"/>
+				<text><![CDATA[Fecha Receta]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="125" uuid="8dbe0d50-a550-4e05-acf8-80b60717bac1"/>
+				<subreportParameter name="codRece">
+					<subreportParameterExpression><![CDATA[$F{codigoReceta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "DetalleReceta.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

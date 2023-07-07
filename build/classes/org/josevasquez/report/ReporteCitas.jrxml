@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCitas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="33d4bd71-13c0-4d0a-8357-4be42109e3de">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="99"/>
+	<parameter name="Foto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Citas C inner join Pacientes P on C.codigoPaciente = P.codigoPaciente inner join Doctores D on C.numeroColegiado = D.numeroColegiado;]]>
+	</queryString>
+	<field name="codigoCita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaCita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaCita" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tratamiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripCondiActual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosPacientes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaPrimeraVisita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-21" y="-21" width="615" height="773" uuid="fdb75baa-963b-4525-a0af-81efeaca0777"/>
+				<imageExpression><![CDATA[$P{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="26" width="112" height="30" uuid="77e91241-2482-4886-993a-e763e533f5f5"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Citas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="34" height="20" uuid="4fb79a7c-eeeb-486b-9f2c-25eb517ff05c"/>
+				<text><![CDATA[Cod.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="2" width="67" height="20" uuid="37ebf80c-5c1e-41d1-979a-b8b36a926003"/>
+				<text><![CDATA[Fecha Cita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="2" width="100" height="20" uuid="e33d8575-6f1c-4aa5-b233-c4f0508f4db8"/>
+				<text><![CDATA[Tratamiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="2" width="77" height="20" uuid="01ca9a7d-b7e3-4f8c-81cb-94b2e6b6ea14"/>
+				<text><![CDATA[Condición Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="2" width="100" height="20" uuid="0fab08ac-b065-4ef1-b8e8-7d542ac7886f"/>
+				<text><![CDATA[Nombres Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="2" width="100" height="20" uuid="eaa17cbc-4d18-4aaa-ad29-aa59b3e8eea6"/>
+				<text><![CDATA[Apellidos Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="2" width="94" height="20" uuid="21899402-96a7-49ae-9423-ca67fdd05d7c"/>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="572" height="1" uuid="2b193be8-3d1f-43b5-941c-ebb7170adab0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="34" height="20" uuid="e603ee78-d3bd-41cf-bdc8-3623fbf28509"/>
+				<textFieldExpression><![CDATA[$F{codigoCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="5" width="67" height="20" uuid="5c0abb09-3ceb-4312-8750-86450197b15e"/>
+				<textFieldExpression><![CDATA[$F{fechaCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="5" width="100" height="20" uuid="1936dbdf-2773-42d0-83b4-410dd283d22b"/>
+				<textFieldExpression><![CDATA[$F{tratamiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="5" width="77" height="20" uuid="ea02d1e4-8890-4904-86b4-10875112b595"/>
+				<textFieldExpression><![CDATA[$F{descripCondiActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="5" width="100" height="20" uuid="d383729a-9b2d-4938-8e4b-cf6a9dab4e16"/>
+				<textFieldExpression><![CDATA[$F{nombrePaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="5" width="100" height="20" uuid="ab3055d2-1cc1-4bb0-a187-7120869909b9"/>
+				<textFieldExpression><![CDATA[$F{apellidosPacientes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="5" width="94" height="20" uuid="8115d0b3-a8b9-487d-a7f6-439d57245aa7"/>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="abd91633-1b62-42aa-a6a5-d946a6542a49"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

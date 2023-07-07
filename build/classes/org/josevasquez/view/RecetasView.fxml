@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="866.0" styleClass="fondoAnchorPane" stylesheets="@../resource/Plantilla.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josevasquez.controller.RecetaController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="194.0" styleClass="paneVertical" stylesheets="@../resource/Plantilla.css">
+         <children>
+            <VBox layoutY="179.0" prefHeight="222.0" prefWidth="194.0">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="CENTER" mnemonicParsing="false" onAction="#nuevo" prefWidth="194.0" styleClass="button1" stylesheets="@../resource/Plantilla.css" text="Nuevo" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/AgregarG.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="CENTER" mnemonicParsing="false" onAction="#eliminar" prefWidth="194.0" styleClass="button1" stylesheets="@../resource/Plantilla.css" text="Eliminar" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/EliminarG.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="CENTER" mnemonicParsing="false" onAction="#editar" prefWidth="194.0" styleClass="button1" stylesheets="@../resource/Plantilla.css" text="Editar" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/EditarG.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="CENTER" mnemonicParsing="false" onAction="#reporte" prefWidth="194.0" styleClass="button1" stylesheets="@../resource/Plantilla.css" text="Reporte" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ReporteG.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="32.0" prefHeight="125.0" prefWidth="130.0" styleClass="fondoTitulo" stylesheets="@../resource/Plantilla.css">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="35.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Receta.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="35.0" layoutY="10.0" text="Recetas">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="82.0" layoutY="141.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Home2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <GridPane fx:id="grpRecetas" layoutX="233.0" layoutY="32.0" prefHeight="120.0" prefWidth="451.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="151.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="0.0" prefWidth="46.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="296.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código" />
+            <Label text="Fecha Receta" GridPane.columnIndex="2" />
+            <Label text="Numero Colegiado" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigo" editable="false" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbColegiado" prefWidth="150.0" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tblRecetas" layoutX="233.0" layoutY="173.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="595.0" stylesheets="@../resource/TableView.css">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="113.0" text="Código" />
+          <TableColumn fx:id="colFechas" prefWidth="312.0" text="Fecha Receta" />
+            <TableColumn fx:id="colColegiado" prefWidth="169.0" text="Numero Colegiado" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
