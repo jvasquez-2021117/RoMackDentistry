@@ -11,7 +11,7 @@ El sistema para la odontología cuenta con diversas funcionalidades que abarcan 
 ```
 -Java
 -Scene Builder
-MySQL
+-MySQL
 ```
 
 ## Instalación
